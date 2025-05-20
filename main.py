@@ -22,10 +22,11 @@ def index_mot(mot) :
         index = alphabet.index(char)
         liste_index.append(index)
         #index = alphabet.index(liste[i])
-    print(liste_index)
+    return liste_index
+
 
 mot = lecture_du_mot()
-index_mot(mot)
+print(index_mot(mot))
 
 
 
