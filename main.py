@@ -1,3 +1,9 @@
+""" Programme principal"""
+
+
+print('***********************')
+print('Bienvenue dans le programme de chiffrement de Cesar')
+print('***********************')
 
 def lecture_du_mot():
     mot = input('Entrez le mot : ')
@@ -16,4 +22,6 @@ def index_mot(liste) :
          index = alphabet.find(liste[i])
          liste_index.append(index)
          print(liste_index)
+
+
 
