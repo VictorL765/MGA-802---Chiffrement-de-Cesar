@@ -4,26 +4,27 @@ import string
 alphabet = string.ascii_lowercase
 liste_index = []
 
+
 #Fonction qui permet de lire un mot
 def lecture_du_mot():
     #demande a l'utilisateur de rentrer le mot
     mot = input('Entrez le mot : ')
-    print(mot)
-    # retourne la liste de mots
+    # retourne la liste/chaine de caractère de mots
     return mot
+
 
 
 # fonction qui renvoie l'index de chaque lettre du mot
 def index_mot(mot) :
     liste_index = []
-    for char in mot :
-        index = alphabet.index(char)
+    for lettre in mot :
+        index = alphabet.index(lettre)
         liste_index.append(index)
-        #index = alphabet.index(liste[i])
     return liste_index
 
 
 mot = lecture_du_mot()
+print(mot)
 index = index_mot(mot)
 print(index)
 
@@ -37,4 +38,17 @@ def chiffrage(mot_a_crypter, cle):
     return mot_crypte
 
 mot_crypte = chiffrage(mot, 2)
-print(mot_crypte)
+print(f'Le mot crypte est :{mot_crypte}')
+
+#Déchiffre le mot crypter connaissant sa clef
+def dechiffrage (mot_a_decrypte, cle):
+    mot_decrypte ="" #Chaine de caractère vide qui servira à renvoyer le mot decrypté
+    index_des_lettres2 = index_mot(mot_a_decrypte) # recupère les indices du mot à dechiffrer
+    for k in range (len(index_des_lettres2)) : # boucle qui itère sur la longueur du mot à décrypter
+        index_d=(index_des_lettres2[k] - cle) % 26 # Calage et rotation dans l'alphabet
+        mot_decrypte += alphabet[index_d]
+    return mot_decrypte
+
+mot_decrypte = dechiffrage(mot, 3)
+print(f'Le mot decrypte est : {mot_decrypte}')
+
