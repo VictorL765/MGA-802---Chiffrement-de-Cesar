@@ -9,4 +9,33 @@ alphabet = string.ascii_lowercase
 #Pour retirer les accents on ce sert de l'outil necessaire page 8 du chiffrement de César
 def enlever_caracteres_speciaux(texte):
     normalized_word=unicodedata.normalize('NFKD', texte)
-    return ''.join(char for char in normalized_word if not unicodadata.combining(char))
+    return ''.join(char for char in normalized_word if not unicodedata.combining(char))
+
+
+#Fonction crypter le texte selon le chiffrement de César avec la clé donnée
+def crypter(texte, cle):
+    texte = enlever_caracteres_speciaux(texte.lower()) #mettre le texte en minuscule par defaut
+    texte_crypte= ""
+
+    for lettre in texte:
+        if lettre in alphabet:
+            index= (alphabet.index(lettre)+cle) % 26 #pour les 26 lettres
+            texte_crypte += alphabet[index]
+        else:
+            texte_crypte += lettre
+
+    return texte_crypte
+
+
+#Pour decrypter le texte chiffré avec la clé on se ressert de la fonction crypter en inversant le décalage
+def decrypter(texte, cle):
+    return crypter(texte, -cle)
+
+texte_test= "Ave César"
+cle_test = 3
+
+texte_crypte =  crypter(texte_test, cle_test)
+print("texte crypte :",texte_crypte)
+
+texte_decrypte =  decrypter(texte_crypte, cle_test)
+print("texte decrypte :",texte_decrypte)
