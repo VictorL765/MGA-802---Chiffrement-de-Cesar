@@ -1,0 +1,1 @@
+#ce code sert dans le cas d'oublie de la clefs par l'utilisateur

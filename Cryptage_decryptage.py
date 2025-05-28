@@ -1,0 +1,1 @@
+#ce code sert à crypter/décrypter le teCryptagexte ou l'input d'entrée
