@@ -31,11 +31,3 @@ def crypter(texte, cle):
 def decrypter(texte, cle):
     return crypter(texte, -cle)
 
-texte_test= "Ave César"
-cle_test = 3
-
-texte_crypte =  crypter(texte_test, cle_test)
-print("texte crypte :",texte_crypte)
-
-texte_decrypte =  decrypter(texte_crypte, cle_test)
-print("texte decrypte :",texte_decrypte)
