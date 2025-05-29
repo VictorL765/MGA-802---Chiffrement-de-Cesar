@@ -1,5 +1,5 @@
 import string
-
+import os
 
 alphabet = string.ascii_lowercase
 liste_index = []
@@ -46,9 +46,53 @@ def dechiffrage (mot_a_decrypte, cle):
     index_des_lettres2 = index_mot(mot_a_decrypte) # recupère les indices du mot à dechiffrer
     for k in range (len(index_des_lettres2)) : # boucle qui itère sur la longueur du mot à décrypter
         index_d=(index_des_lettres2[k] - cle) % 26 # Calage et rotation dans l'alphabet
-        mot_decrypte += alphabet[index_d]
+    mot_decrypte += alphabet[index_d] #ajout des lettres
     return mot_decrypte
 
 mot_decrypte = dechiffrage(mot, 3)
 print(f'Le mot decrypte est : {mot_decrypte}')
 
+#Fonction qui propose à l'utilisateur de choisir son fichier avec des mots
+def choisir_fichier (fichier = "mots_pendu.txt", dossier = "/Users/elsakupfer/Documents/ETS/ETE/MGA802") :
+
+    # teste si le fichier existe
+    full_filename = os.path.join(dossier,fichier)
+    if not os.path.isfile(full_filename):
+        raise RuntimeError(f'Je ne trouve pas le fichier {full_filename} !')
+
+     # Ouvre le fichier contenant les mots en mode lecture
+    with open(full_filename, 'r', encoding='utf8') as f:
+        # Lire le contenu du fichier
+        words = f.read()
+
+lecture_fichier = fichier()
+
+#Fonction qui permet de choisir l'option de cryptage ou decryptage, interface utilisateur
+def main() :
+
+
+ # Décrypte le mot méthode force-brute
+def dechiffrage(mot_a_decrypte):
+    mot_decrypte = ""  # Chaine de caractère vide qui servira à renvoyer le mot decrypté
+    index_des_lettres2 = index_mot(mot_a_decrypte)  # recupère les indices du mot à dechiffrer
+    for k in range(len(index_des_lettres2)):  # boucle qui itère sur la longueur du mot à décrypter
+        for cle in range (0,27) :
+        index_d = (index_des_lettres2[k] - cle) % 26  # Calage et rotation dans l'alphabet
+        mot_decrypte += alphabet[index_d]  # ajout des lettres
+        print (f'Le mot decrypte est : {mot_decrypte}')
+        question = input('Est ce que mot semble correcte ? (oui/non) :').lower()
+        if question in ('oui') :
+            print (f'Le mot decrypte valide est : {mot_decrypte}')
+            break
+        else :
+            dechiffrage(mot_a_decrypte)
+    return mot_decrypte
+
+# Gérer les espaces, accents et caractère spécifique
+
+#Améliore la performance du programme force-brute
+#Utiliser les mots les plus courants de la la,gue française
+# % (de, le, des, ...) verbes, ...
+# if y a des indice qui permettent de faire ces types de mots --> les proposer en premier ?
+# https://www.lingoda.com/blog/fr/les-mots-les-plus-utilises-en-francais/
+# ou voir Word

@@ -1,4 +1,7 @@
 #Ce code sert à battir l'interface pour l'utilisateur
+from Forcebrute import brute_force
+from Cryptage_decryptage import crypter
+from Cryptage_decryptage import decrypter
 
 #Fonction afficher pour pouvoir modifier le style d'affichage si besoin
 def afficher(message):
@@ -25,17 +28,24 @@ def interface():
         cle= int(input("Entrez la clé :"))
 
         if choix == "c":
-            from Cryptage_decryptage import crypter
+            #from Cryptage_decryptage import crypter
             afficher(crypter(texte, cle))
 
         else:
-            from Cryptage_decryptage import decrypter
+            #from Cryptage_decryptage import decrypter
             afficher(decrypter(texte, cle))
 
 #sinon on fait appel a brute force
     else:
-        from Bruteforce import bruteforce
         afficher("Decryptage par ... la force brute ! :")
-        bruteforce(texte)
+        brute_force(texte)
 
 
+
+    renouveler=input('Voulez-vous recommencer ? (oui/non):').lower()
+    if renouveler == "oui":
+        interface()
+    else :
+        quit()
+
+interface()
