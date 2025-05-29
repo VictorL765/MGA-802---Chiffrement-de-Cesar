@@ -10,6 +10,23 @@ mots_courants = [
 
 alphabet = string.ascii_lowercase
 
+def lire_texte_courant():
+    full_filename = input(r"Entrez le chemin du fichier texte :\n")
+
+    # teste si le fichier existe
+    if not os.path.isfile(full_filename):
+        raise RuntimeError(f'Je ne trouve pas le fichier {full_filename} !')
+
+    # Ouvre le fichier contenant les mots en mode lecture
+    with open(full_filename, 'r', encoding='utf8') as f:
+        # Lire le contenu du fichier
+        words = f.read()
+
+        # retourne la liste de mots
+        return words
+
+
+
 def lire_texte():
     import os
     full_filename = input(r"Entrez le chemin du fichier texte :\n")
