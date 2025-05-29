@@ -26,6 +26,6 @@ Ce projet implémente le cryptage et décryptage de mots et phrases que la clefs
 
 ## Créateurs 
 Projet réalisé par : 
-Noé Morance 
-Victor Laloi 
-Elsa Kupfer 
+[Noé /Morance] 
+[Victor /Laloi] 
+[Elsa /Kupfer] 
