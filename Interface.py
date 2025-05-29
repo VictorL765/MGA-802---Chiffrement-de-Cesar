@@ -1,5 +1,5 @@
 #Ce code sert à battir l'interface pour l'utilisateur
-from Forcebrute import brute_force
+from Bruteforce import brute_force
 from Cryptage_decryptage import crypter
 from Cryptage_decryptage import decrypter
 
