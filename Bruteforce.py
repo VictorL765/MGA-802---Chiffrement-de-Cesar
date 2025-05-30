@@ -71,7 +71,7 @@ lire_texte()
 
 
 def brute_force(texte):
-    for cle in range(1, 26):
+    for cle in range(0, 25):
         texte_a_tester = decrypter(texte, cle)
         for mot in mots_courants:
             if mot in texte_a_tester:
@@ -86,6 +86,7 @@ def brute_force(texte):
 
                 else:
                     print("On continue avec une autre clé")
+                    break #permet de recommencer une boucle for pour une nouvelle clef
 
     print("Aucun mot courant détecté.")
 
