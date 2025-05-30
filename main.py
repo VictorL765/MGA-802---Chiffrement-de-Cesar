@@ -1,4 +1,7 @@
+#Code pour chiffrer et dechiffrer un texte
 import string
+import unicodedata
+
 
 
 alphabet = string.ascii_lowercase

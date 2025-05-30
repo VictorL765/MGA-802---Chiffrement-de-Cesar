@@ -16,6 +16,8 @@ def interface():
         afficher("Choix invalide sortie du programme")
         return
 
+#choix entre console et fichier
+    afficher("Voulez vous utiliser votre fichier texte ou entrer votre texte dans la console")
     texte = input(" Entrez le texte: ")
 
     clef_connue=input(" Avez vous une clé ? (oui/non) : ").lower()
@@ -29,7 +31,7 @@ def interface():
             afficher(crypter(texte, cle))
 
         else:
-            from Cryptage_decryptage import decrypter
+            from Cryptage_decryptage import decrypte
             afficher(decrypter(texte, cle))
 
 #sinon on fait appel a brute force
@@ -37,5 +39,6 @@ def interface():
         from Bruteforce import bruteforce
         afficher("Decryptage par ... la force brute ! :")
         bruteforce(texte)
+
 
 
