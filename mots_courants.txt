@@ -106,7 +106,7 @@ sentir
 sembler
 tenir
 Comprendre
-9002         rendre
+rendre
 8851         attendre
 8768         sortir
 7625         vivre

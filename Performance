@@ -1,1 +1,7 @@
+# Evaluation du temps de calul pour la fonction brute force
 
+from timeit import timeit
+from Bruteforce import brute_force
+
+
+temps_performance = timeit(brute_force,

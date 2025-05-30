@@ -96,3 +96,24 @@ def dechiffrage(mot_a_decrypte):
 # if y a des indice qui permettent de faire ces types de mots --> les proposer en premier ?
 # https://www.lingoda.com/blog/fr/les-mots-les-plus-utilises-en-francais/
 # ou voir Word
+
+
+def lire_texte_courant(fichier_c="mots_courants.txt", dossier_c="/Users/elsakupfer/PycharmProjects/MGA-802---Chiffrement-de-Cesar"):
+    #full_filename = fichier_c
+    full_filename = os.path.join(fichier_c, dossier_c)
+
+    # teste si le fichier existe
+    if not os.path.isfile(full_filename):
+        raise RuntimeError(f'Je ne trouve pas le fichier {full_filename} !')
+
+    # Ouvre le fichier contenant les mots en mode lecture
+    with open(full_filename, 'r', encoding='utf8') as f:
+        # Lire le contenu du fichier
+        words = f.read()
+
+        # retourne la liste de mots
+        return words
+
+fichier_c = input ('nom du fichier texte des mots courants.txt:')
+dossier_c = input ('Chemin du dossier des mots courants:')
+mot_courants=lire_texte_courant()
