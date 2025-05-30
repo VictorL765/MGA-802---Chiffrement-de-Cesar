@@ -34,7 +34,7 @@ def lire_texte(fichier="mots_courants.txt",texte="mots_pendu.txt"):
 
     with open(lecture_texte, 'r', encoding='utf8') as f:
         # Lire le contenu du fichier
-        texte_a_dechiffrer1=f.read()
+p        texte_a_dechiffrer1=f.read()
         texte_a_dechiffrer = texte_a_dechiffrer1.split()
 
         # retourne la liste de mots

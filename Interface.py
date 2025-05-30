@@ -11,7 +11,7 @@ def interface():
     afficher("Bienvenue dans le chiffrement de César")
     afficher("Souhaitez-vous crypter ou decrypter ?")
 
-    choix=input("Tapez 'c' pour crypter ou 'd' pour decrypter : ").lower() #on garde a réponse en minuscule
+    choix=input("Tapez 'c' pour crypter ou 'd' pour decrypter : ").lower() #on garde la réponse en minuscule
 
 #en cas d'une entrée différente de c ou d
     if choix not in ['c', 'd']:
