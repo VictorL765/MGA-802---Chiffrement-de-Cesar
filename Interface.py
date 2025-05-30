@@ -18,7 +18,19 @@ def interface():
 
 #choix entre console et fichier
     afficher("Voulez vous utiliser votre fichier texte ou entrer votre texte dans la console")
-    texte = input(" Entrez le texte: ")
+    source=input("Tapez 'console' ou 'fichier': ").lower()
+
+    if source == "console":
+       texte = input(" Entrez le texte: ")
+
+    elif source == "fichier":
+        nom_fichier = input("Tapez 'nom_fichier': ").lower()
+        # Si le fichier n'existe pas ou qu'une erreur se produit, on affiche l'erreur et on arrete l'execution.
+        try:
+            texte = lire_fichier(nom_fichier)
+        except Execption as e: #https://stackoverflow.com/questions/18982610/difference-between-except-and-except-exception-as-e
+            afficher(str(e))
+            return
 
     clef_connue=input(" Avez vous une clé ? (oui/non) : ").lower()
 
