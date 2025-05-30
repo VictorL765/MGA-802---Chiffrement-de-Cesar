@@ -18,12 +18,12 @@ def interface():
 
 #choix entre console et fichier
     afficher("Voulez vous utiliser votre fichier texte ou entrer votre texte dans la console")
-    source=input("Tapez 'console' ou 'fichier': ").lower()
+    source=input("Tapez 'c' ou 'f': ").lower()
 
-    if source == "console":
+    if source == "c":
        texte = input(" Entrez le texte: ")
 
-    elif source == "fichier":
+    elif source == "f":
         nom_fichier = input("Tapez 'nom_fichier': ").lower()
         # Si le fichier n'existe pas ou qu'une erreur se produit, on affiche l'erreur et on arrete l'execution.
         try:
@@ -48,7 +48,7 @@ def interface():
 
 #sinon on fait appel a brute force
     else:
-        from Bruteforce import bruteforce
+        from Bruteforce import brute_force
         afficher("Decryptage par ... la force brute ! :")
         bruteforce(texte)
 
