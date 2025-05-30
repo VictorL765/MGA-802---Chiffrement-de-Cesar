@@ -26,8 +26,10 @@ def crypter(texte, cle):
 
     return texte_crypte
 
+crypter()
 
 #Pour decrypter le texte chiffré avec la clé on réutilise la fonction crypter en inversant le décalage
 def decrypter(texte, cle):
     return crypter(texte, -cle)
 
+decrypter(texte, )
