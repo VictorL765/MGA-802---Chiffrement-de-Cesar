@@ -4,10 +4,7 @@ import string
 from Cryptage_decryptage import decrypter
 import os
 
-#mots_courants = [
-   # "le", "la", "et", "un", "une", "est", "dans", "en", "il", "elle", "ce", "pour", "qui",
-   # "sur", "pas", "plus", "avec", "tout", "mais", "nous", "vous", "comme", "bien", "fait"
-#]
+
 
 alphabet = string.ascii_lowercase
 
@@ -48,30 +45,6 @@ mots_courants, texte_a_decrypter=lire_texte()
 
 
 
-
-
-
-
-'''''
-def lire_texte():
-
-    lecture_fichier = input(r"Entrez le chemin du fichier texte :")
-
-    # teste si le fichier existe
-    if not os.path.isfile(lecture_fichier):
-        raise RuntimeError(f'Je ne trouve pas le fichier {lecture_fichier} !')
-
-    # Ouvre le fichier contenant les mots en mode lecture
-    with open(lecture_fichier, 'r', encoding='utf8') as f:
-        # Lire le contenu du fichier
-        words = f.read()
-
-        # retourne la liste de mots
-        return words
-
-lire_texte()
-
-'''''
 
 
 def brute_force(texte):
