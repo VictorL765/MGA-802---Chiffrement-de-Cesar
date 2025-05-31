@@ -9,6 +9,3 @@ if renouveler == "oui":
     interface()
 else:
     quit()
-
-
-
