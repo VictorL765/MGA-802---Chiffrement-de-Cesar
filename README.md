@@ -26,14 +26,19 @@ Ce projet implémente le cryptage et décryptage de mots et phrases que la clefs
 - 'Bruteforce.py' : Déchiffrement sans clef connue
 - 'Interface.py' : Interface utilisateur
 
+## Architecture
+![image](https://github.com/user-attachments/assets/40aefb74-a500-4003-899b-e132964f45d8)
+
+
 ## Créateurs 
 Projet réalisé par : 
 [Noé /Morance] 
- 
+[Victor /Laloi]
 [Elsa /Kupfer] 
 
 ## Références 
 - https://stackoverflow.com/questions/18982610/difference-between-except-and-except-exception-as-e
 - #fonction prise de ilona daumas dans son jeu du pendu corrigé
 - https://www.france-ioi.org/algo/course.php?idChapter=595&idCourse=2353#:~:text=La%20fonction%20split%20permet%2C%20%C3%A0,alors%20acc%C3%A9der%20de%20mani%C3%A8re%20classique
+
 
