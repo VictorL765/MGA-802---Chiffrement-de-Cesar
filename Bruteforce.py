@@ -1,22 +1,22 @@
 #ce code sert dans le cas d'oublie de la clefs par l'utilisateur
 
-import string
 from Cryptage_decryptage import decrypter
-from FichierRessourse import lire_fichier
+from FichierRessource import lire_fichier
 
 #charger des mots courants depuis un fichier txt
-def charger_mots_courants(fichier=#mots_courants.txt):
+def charger_mots_courants(fichier="mots_courants.txt"):
     try:
        contenu = lire_fichier(fichier)
-       mots_courants = contenu.split[]
+       mots_courants = contenu.split() #on decoupe selon les retours a la ligne ou espace
        return mots_courants
     except Exception as e:
        print(f"Erreur de chargarment des mots courants: {str(e)}")
        return []
 
-def brute_force(texte):
 
-    for cle in range(0, 25): #test les clefs possibles sur les lettres de l'alphabet
+def brute_force(texte):
+    mots_courants = charger_mots_courants() #on le met dans la fonction pour etre plus flexible en cas d'appel de la fonction
+    for cle in range(0, 26): #test les clefs possibles sur les lettres de l'alphabet
         texte_a_tester = decrypter(texte, cle)
         for mot in mots_courants:
             if mot in texte_a_tester: #test si un des mots courant est présent
