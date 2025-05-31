@@ -97,3 +97,4 @@ def brute_force(texte):
 
 texte_a_decrypter = ' '.join(texte_a_decrypter) #permet de transformé la variable liste, texte_a_decrypter en chaine de caractère
 brute_force(texte_a_decrypter) #execute le programme
+brute_force(texte_a_decrypter) #execute le programme
