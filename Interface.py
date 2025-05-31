@@ -18,7 +18,21 @@ def interface():
         afficher("Choix invalide sortie du programme")
         return
 
-    texte = input(" Entrez le texte: ")
+#choix entre console et fichier
+    afficher("Voulez vous utiliser votre fichier texte ou entrer votre texte dans la console")
+    source=input("Tapez 'c' ou 'f': ").lower()
+
+    if source == "c":
+       texte = input(" Entrez le texte: ")
+
+    elif source == "f":
+        nom_fichier = input("Tapez 'nom_fichier': ").lower()
+        # Si le fichier n'existe pas ou qu'une erreur se produit, on affiche l'erreur et on arrete l'execution.
+        try:
+            texte = lire_fichier(nom_fichier)
+        except Execption as e: #https://stackoverflow.com/questions/18982610/difference-between-except-and-except-exception-as-e
+            afficher(str(e))
+            return
 
     clef_connue=input(" Avez vous une clé ? (oui/non) : ").lower()
 
@@ -31,11 +45,13 @@ def interface():
             afficher(crypter(texte, cle))
 
         else:
-            from Cryptage_decryptage import decrypter
+            from Cryptage_decryptage import decrypte
             afficher(decrypter(texte, cle))
 
 #sinon on fait appel a brute force
     else:
+        from Bruteforce import brute_force
+
         afficher("Decryptage par ... la force brute ! :")
         from Bruteforce import brute_force
         brute_force(texte)
@@ -48,4 +64,5 @@ def interface():
     else :
         quit()
 
-interface()
+
+
