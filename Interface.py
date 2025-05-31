@@ -1,5 +1,7 @@
 #Ce code sert à battir l'interface pour l'utilisateur
 
+
+
 #Fonction afficher pour pouvoir modifier le style d'affichage si besoin
 def afficher(message):
     print(message)
@@ -9,7 +11,7 @@ def interface():
     afficher("Bienvenue dans le chiffrement de César")
     afficher("Souhaitez-vous crypter ou decrypter ?")
 
-    choix=input("Tapez 'c' pour crypter ou 'd' pour decrypter : ").lower() #on garde a réponse en minuscule
+    choix=input("Tapez 'c' pour crypter ou 'd' pour decrypter : ").lower() #on garde la réponse en minuscule
 
 #en cas d'une entrée différente de c ou d
     if choix not in ['c', 'd']:
@@ -49,8 +51,18 @@ def interface():
 #sinon on fait appel a brute force
     else:
         from Bruteforce import brute_force
+
         afficher("Decryptage par ... la force brute ! :")
-        bruteforce(texte)
+        from Bruteforce import brute_force
+        brute_force(texte)
+
+
+
+    renouveler=input('Voulez-vous recommencer ? (oui/non):').lower()
+    if renouveler == "oui":
+        interface()
+    else :
+        quit()
 
 
 
