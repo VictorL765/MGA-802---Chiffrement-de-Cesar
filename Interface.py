@@ -55,14 +55,3 @@ def interface():
         afficher("Decryptage par ... la force brute ! :")
         from Bruteforce import brute_force
         brute_force(texte)
-
-
-
-    renouveler=input('Voulez-vous recommencer ? (oui/non):').lower()
-    if renouveler == "oui":
-        interface()
-    else :
-        quit()
-
-
-
