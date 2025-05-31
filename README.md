@@ -15,9 +15,12 @@ Ce projet implémente le cryptage et décryptage de mots et phrases que la clefs
 
 ## Utilisation 
 1) Lancez le programme en appuyant sur 'Run'
-2) Proposez un mot ou un fichier contenant des mots ou du texte
-3) Le programme renvoie le mot crypter ou décrypter selon le choix de l'utilisateur
-4) Vous pouvez décider de recommencer ou vous arrêter 
+2) Choisissez le mode de cryptage ou décryptage 
+3) Choisissez d'utiliser votre fichier texte ou entrez un texte dans la console
+4) Choisissez le mode clef connue ou non
+5) Le programme renvoie le mot ou texte crypter ou décrypter selon le choix de l'utilisateur
+6) Vous pouvez décider de recommencer ou vous arrêter 
+ 
 
 ## Structure du projet 
 - 'Cryptage_decryptage.py' : fonctions de chiffrement et déchiffrement
@@ -31,4 +34,5 @@ Projet réalisé par :
 [Elsa /Kupfer] 
 
 ## Références 
-
+- https://stackoverflow.com/questions/18982610/difference-between-except-and-except-exception-as-e
+- #fonction prise de ilona daumas dans son jeu du pendu corrigé

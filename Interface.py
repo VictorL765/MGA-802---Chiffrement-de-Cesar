@@ -30,7 +30,7 @@ def interface():
         # Si le fichier n'existe pas ou qu'une erreur se produit, on affiche l'erreur et on arrete l'execution.
         try:
             texte = lire_fichier(nom_fichier)
-        except Execption as e: #https://stackoverflow.com/questions/18982610/difference-between-except-and-except-exception-as-e
+        except Execption as e:
             afficher(str(e))
             return
 

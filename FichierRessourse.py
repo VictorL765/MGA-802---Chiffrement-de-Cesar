@@ -9,7 +9,7 @@ def afficher(message):
 
 #lire le contenue d'un fichier texte
 def lire_fichier(nom_fichier):
-   #fonction prise de ilona daumas dans son jeu du pendu que j'ai corrigé
+
 
    # teste si le fichier existe
    full_filename = os.path.join(nom_fichier)
