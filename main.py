@@ -3,4 +3,3 @@
 from Interface import *
 
 interface()
-
