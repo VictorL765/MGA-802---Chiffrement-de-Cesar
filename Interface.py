@@ -1,5 +1,10 @@
 #Ce code sert à battir l'interface pour l'utilisateur
 
+from FichierRessource import lire_fichier
+from Cryptage_decryptage import crypter
+from Cryptage_decryptage import decrypter
+from Bruteforce import brute_force
+from time import perf_counter
 
 
 #Fonction afficher pour pouvoir modifier le style d'affichage si besoin
@@ -8,6 +13,8 @@ def afficher(message):
 
 #Definition d'un interface laissant le choix a l'utilisateur de crypter ou decrypter son texte
 def interface():
+    texte = None #initialise la variable pour éviter des warings plus tard
+
     afficher("Bienvenue dans le chiffrement de César")
     afficher("Souhaitez-vous crypter ou decrypter ?")
 
@@ -30,7 +37,7 @@ def interface():
         # Si le fichier n'existe pas ou qu'une erreur se produit, on affiche l'erreur et on arrete l'execution.
         try:
             texte = lire_fichier(nom_fichier)
-        except Execption as e:
+        except Exception as e:    #https://stackoverflow.com/questions/18982610/difference-between-except-and-except-exception-as-e
             afficher(str(e))
             return
 
@@ -41,25 +48,21 @@ def interface():
         cle= int(input("Entrez la clé :"))
 
         if choix == "c":
-            from Cryptage_decryptage import crypter
             afficher(crypter(texte, cle))
 
         else:
-            from Cryptage_decryptage import decrypte
             afficher(decrypter(texte, cle))
 
 #sinon on fait appel a brute force
     else:
-        from Bruteforce import brute_force
-
-        afficher("Decryptage par ... la force brute ! :")
-        from Bruteforce import brute_force
-        from time import perf_counter
+        afficher("Decryptage par ... la force brute !:")
 
         tic = perf_counter()  # Demarrage du chrono
         brute_force(texte)
         toc = perf_counter()  # Fin du chrono
 
         print(f"temps d'execution de la fonction brute force : {toc - tic}  [s]")
+
+
 
 
