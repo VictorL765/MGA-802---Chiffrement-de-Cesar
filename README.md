@@ -20,11 +20,11 @@ Ce projet implémente le cryptage et décryptage de mots et phrases que la clefs
 4) Choisissez le mode clef connue ou non
 5) Le programme renvoie le mot ou texte crypter ou décrypter selon le choix de l'utilisateur
 6) Vous pouvez décider de recommencer ou vous arrêter 
- 
+- ![Structure d'utilisation]!![Structure_utilisation.png](../../Documents/Structure_utilisation.png)
 
 ## Structure du projet 
 - 'Cryptage_decryptage.py' : fonctions de chiffrement et déchiffrement
-- 'Bruteforce.py' : Déchiffrement sans clefs connue
+- 'Bruteforce.py' : Déchiffrement sans clef connue
 - 'Interface.py' : Interface utilisateur
 
 ## Créateurs 
