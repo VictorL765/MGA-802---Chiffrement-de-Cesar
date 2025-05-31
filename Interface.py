@@ -54,4 +54,12 @@ def interface():
 
         afficher("Decryptage par ... la force brute ! :")
         from Bruteforce import brute_force
+        from time import perf_counter
+
+        tic = perf_counter()  # Demarrage du chrono
         brute_force(texte)
+        toc = perf_counter()  # Fin du chrono
+
+        print(f"temps d'execution de la fonction brute force : {toc - tic}  [s]")
+
+
